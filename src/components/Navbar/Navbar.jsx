@@ -28,16 +28,24 @@ const Navbar = () => {
             className="menu menu-sm dropdown-content bg-base-100 rounded-box z-1 mt-3 w-52 p-2 shadow"
           >
             <li>
-              <a>Home</a>
+              <a className="hover:bg-transparent text-base font-semibold hover:text-[#0EA106] hover:shadow-none">
+                Home
+              </a>
             </li>
             <li>
-              <a>My Bookings</a>
+              <a className="hover:bg-transparent text-base font-semibold hover:text-[#0EA106] hover:shadow-none">
+                My Bookings
+              </a>
             </li>
             <li>
-              <a>Blogs</a>
+              <a className="hover:bg-transparent text-base font-semibold hover:text-[#0EA106] hover:shadow-none">
+                Blogs
+              </a>
             </li>
             <li>
-              <a>Contact Us</a>
+              <a className="hover:bg-transparent text-base font-semibold hover:text-[#0EA106] hover:shadow-none">
+                Contact Us
+              </a>
             </li>
           </ul>
         </div>
@@ -53,22 +61,22 @@ const Navbar = () => {
       <div className="navbar-center hidden lg:flex">
         <ul className="menu menu-horizontal px-1 gap-5">
           <li>
-            <a className="hover:bg-transparent text-base font-semibold hover:text-[#0EA106]">
+            <a className="hover:bg-transparent text-base font-semibold hover:text-[#0EA106] hover:shadow-none">
               Home
             </a>
           </li>
           <li>
-            <a className="hover:bg-transparent text-base font-semibold hover:text-[#0EA106]">
+            <a className="hover:bg-transparent text-base font-semibold hover:text-[#0EA106] hover:shadow-none">
               My Bookings
             </a>
           </li>
           <li>
-            <a className="hover:bg-transparent text-base font-semibold hover:text-[#0EA106]">
+            <a className="hover:bg-transparent text-base font-semibold hover:text-[#0EA106] hover:shadow-none">
               Blogs
             </a>
           </li>
           <li>
-            <a className="hover:bg-transparent text-base font-semibold hover:text-[#0EA106]">
+            <a className="hover:bg-transparent text-base font-semibold hover:text-[#0EA106] hover:shadow-none">
               Contact Us
             </a>
           </li>
