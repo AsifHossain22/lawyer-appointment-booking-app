@@ -44,7 +44,7 @@ const Navbar = () => {
             </li>
             <li>
               <a className="hover:bg-transparent text-base font-semibold hover:text-[#0EA106] hover:shadow-none">
-                Services
+                404
               </a>
             </li>
           </ul>
@@ -77,7 +77,7 @@ const Navbar = () => {
           </li>
           <li>
             <a className="hover:bg-transparent text-base font-semibold hover:text-[#0EA106] hover:shadow-none">
-              Services
+              404
             </a>
           </li>
         </ul>

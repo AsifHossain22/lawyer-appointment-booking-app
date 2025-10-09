@@ -1,15 +1,19 @@
 @import "tailwindcss";
 @plugin "daisyui";
 
-/* BannerContainer */
 .bannerContainer {
   background: url(../src/assets/banner.png), center center, no-repeat;
   background-size: cover;
-  max-height: 90vh;
 }
 .bannerContent {
   min-height: 85vh;
 }
 .socialMediaIcon:hover {
   color: #0ea106;
+}
+.errorPage {
+  background: url(../src/assets/404.png), center center, no-repeat;
+  background-size: cover;
+  min-height: 90vh;
+  padding: 20px 0;
 }

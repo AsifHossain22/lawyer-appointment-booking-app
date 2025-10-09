@@ -24,9 +24,6 @@ const Footer = () => {
           <a className="hover:bg-transparent text-base font-semibold hover:text-[#0EA106] cursor-pointer duration-300">
             Blogs
           </a>
-          <a className="hover:bg-transparent text-base font-semibold hover:text-[#0EA106] cursor-pointer duration-300">
-            Services
-          </a>
         </nav>
       </aside>
 
