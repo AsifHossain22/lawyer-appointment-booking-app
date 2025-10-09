@@ -10,3 +10,6 @@
 .bannerContent {
   min-height: 85vh;
 }
+.socialMediaIcon:hover {
+  color: #0ea106;
+}
