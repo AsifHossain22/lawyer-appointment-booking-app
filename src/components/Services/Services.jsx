@@ -20,7 +20,7 @@ const Services = () => {
         <div className="px-12 py-10 bg-[#0F0F0F05] rounded-2xl">
           {/* ServiceImage */}
           <div>
-            <img src="layer.png" alt="" className="w-16" />
+            <img src="lawyer.png" alt="" className="w-16" />
           </div>
           <h4 className="text-[#0F0F0F] text-5xl font-extrabold pt-4 pb-3">
             199+

@@ -1,7 +1,7 @@
 import React from "react";
 import Banner from "../../components/Banner/Banner";
 import Services from "../../components/Services/Services";
-import Layers from "../../components/Layers/Layers";
+import Lawyers from "../../components/Lawyers/Lawyers";
 
 const Home = () => {
   return (
@@ -13,7 +13,7 @@ const Home = () => {
 
       {/* LayerSection */}
       <section>
-        <Layers></Layers>
+        <Lawyers></Lawyers>
       </section>
 
       {/* ServicesSection */}
