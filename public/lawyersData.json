@@ -1,0 +1,98 @@
+[
+  {
+    "lawyer_image": "https://randomuser.me/api/portraits/men/32.jpg",
+    "lawyer_name": "Omar Rahman",
+    "lawyer_designation": "Senior Partner",
+    "speciality": "Corporate Law",
+    "experience": 14,
+    "licence_number": "BAR-UAE-14782"
+  },
+  {
+    "lawyer_image": "https://randomuser.me/api/portraits/women/45.jpg",
+    "lawyer_name": "Aisha Khan",
+    "lawyer_designation": "Associate",
+    "speciality": "Family Law",
+    "experience": 6,
+    "licence_number": "LN-DF-90834"
+  },
+  {
+    "lawyer_image": "https://randomuser.me/api/portraits/men/76.jpg",
+    "lawyer_name": "Faisal Al-Mansouri",
+    "lawyer_designation": "Consultant",
+    "speciality": "Commercial Litigation",
+    "experience": 10,
+    "licence_number": "BAR-AE-33019"
+  },
+  {
+    "lawyer_image": "https://randomuser.me/api/portraits/women/12.jpg",
+    "lawyer_name": "Nora Ibrahim",
+    "lawyer": "Senior Counsel",
+    "speciality": "Intellectual Property",
+    "experience": 11,
+    "licence_number": "IP-LN-55620"
+  },
+  {
+    "lawyer_image": "https://randomuser.me/api/portraits/men/14.jpg",
+    "lawyer_name": "Karim Haddad",
+    "lawyer": "Partner",
+    "speciality": "Real Estate Law",
+    "experience": 18,
+    "licence_number": "RE-BAR-77211"
+  },
+  {
+    "lawyer_image": "https://randomuser.me/api/portraits/women/9.jpg",
+    "lawyer_name": "Sara Al-Farouq",
+    "lawyer": "Associate",
+    "speciality": "Employment & Labor",
+    "experience": 5,
+    "licence_number": "EMP-LN-40107"
+  },
+  {
+    "lawyer_image": "https://randomuser.me/api/portraits/men/58.jpg",
+    "lawyer_name": "Hassan Yusuf",
+    "lawyer": "Advocate",
+    "speciality": "Criminal Defense",
+    "experience": 12,
+    "licence_number": "CRIM-ADV-22495"
+  },
+  {
+    "lawyer_image": "https://randomuser.me/api/portraits/women/68.jpg",
+    "lawyer_name": "Lina Mustafa",
+    "lawyer": "Legal Counsel",
+    "speciality": "Immigration Law",
+    "experience": 8,
+    "licence_number": "IM-CL-11903"
+  },
+  {
+    "lawyer_image": "https://randomuser.me/api/portraits/men/5.jpg",
+    "lawyer_name": "Yousef Naji",
+    "lawyer": "Partner",
+    "speciality": "Tax Law",
+    "experience": 16,
+    "licence_number": "TAX-BAR-88960"
+  },
+  {
+    "lawyer_image": "https://randomuser.me/api/portraits/women/27.jpg",
+    "lawyer_name": "Mariam Zaki",
+    "lawyer_designation": "Associate",
+    "speciality": "Banking & Finance",
+    "experience": 7,
+    "licence_number": "BF-LN-66204"
+  },
+  {
+    "lawyer_image": "https://randomuser.me/api/portraits/men/49.jpg",
+    "lawyer_name": "Adnan Qureshi",
+    "lawyer_designation": "Senior Attorney",
+    "speciality": "Arbitration & ADR",
+    "experience": 13,
+    "licence_number": "ADR-AT-73518"
+  },
+  {
+    "lawyer_image": "https://randomuser.me/api/portraits/women/53.jpg",
+    "lawyer_name": "Rania Selim",
+    "lawyer_designation": "Counsel",
+    "speciality": "Environmental Law",
+    "experience": 9,
+    "licence_number": "ENV-LN-25791"
+  }
+]
