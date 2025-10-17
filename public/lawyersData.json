@@ -1,98 +1,110 @@
 [
   {
-    "lawyer_image": "https://randomuser.me/api/portraits/men/32.jpg",
-    "lawyer_name": "Omar Rahman",
-    "lawyer_designation": "Senior Partner",
-    "speciality": "Corporate Law",
-    "experience": 14,
-    "licence_number": "BAR-UAE-14782"
-  },
-  {
-    "lawyer_image": "https://randomuser.me/api/portraits/women/45.jpg",
-    "lawyer_name": "Aisha Khan",
-    "lawyer_designation": "Associate",
+    "lawyerId": "LW-1001",
+    "lawyerImage": "https://randomuser.me/api/portraits/women/12.jpg",
+    "lawyerName": "Ayesha Rahman",
+    "lawyerDesignation": "Senior Partner",
     "speciality": "Family Law",
-    "experience": 6,
-    "licence_number": "LN-DF-90834"
+    "experience": "15",
+    "licenceNumber": "LN-2015-4587"
   },
   {
-    "lawyer_image": "https://randomuser.me/api/portraits/men/76.jpg",
-    "lawyer_name": "Faisal Al-Mansouri",
-    "lawyer_designation": "Consultant",
-    "speciality": "Commercial Litigation",
-    "experience": 10,
-    "licence_number": "BAR-AE-33019"
+    "lawyerId": "LW-1002",
+    "lawyerImage": "https://randomuser.me/api/portraits/men/45.jpg",
+    "lawyerName": "Imran Siddiqui",
+    "lawyerDesignation": "Associate",
+    "speciality": "Corporate Law",
+    "experience": "7",
+    "licenceNumber": "LN-2018-3321"
   },
   {
-    "lawyer_image": "https://randomuser.me/api/portraits/women/12.jpg",
-    "lawyer_name": "Nora Ibrahim",
-    "lawyer": "Senior Counsel",
+    "lawyerId": "LW-1003",
+    "lawyerImage": "https://randomuser.me/api/portraits/women/34.jpg",
+    "lawyerName": "Sara Noor",
+    "lawyerDesignation": "Counsel",
     "speciality": "Intellectual Property",
-    "experience": 11,
-    "licence_number": "IP-LN-55620"
+    "experience": "10",
+    "licenceNumber": "LN-2013-9076"
   },
   {
-    "lawyer_image": "https://randomuser.me/api/portraits/men/14.jpg",
-    "lawyer_name": "Karim Haddad",
-    "lawyer": "Partner",
-    "speciality": "Real Estate Law",
-    "experience": 18,
-    "licence_number": "RE-BAR-77211"
-  },
-  {
-    "lawyer_image": "https://randomuser.me/api/portraits/women/9.jpg",
-    "lawyer_name": "Sara Al-Farouq",
-    "lawyer": "Associate",
-    "speciality": "Employment & Labor",
-    "experience": 5,
-    "licence_number": "EMP-LN-40107"
-  },
-  {
-    "lawyer_image": "https://randomuser.me/api/portraits/men/58.jpg",
-    "lawyer_name": "Hassan Yusuf",
-    "lawyer": "Advocate",
+    "lawyerId": "LW-1004",
+    "lawyerImage": "https://randomuser.me/api/portraits/men/22.jpg",
+    "lawyerName": "Mohammed Alvi",
+    "lawyerDesignation": "Partner",
     "speciality": "Criminal Defense",
-    "experience": 12,
-    "licence_number": "CRIM-ADV-22495"
+    "experience": "18",
+    "licenceNumber": "LN-2007-6543"
   },
   {
-    "lawyer_image": "https://randomuser.me/api/portraits/women/68.jpg",
-    "lawyer_name": "Lina Mustafa",
-    "lawyer": "Legal Counsel",
-    "speciality": "Immigration Law",
-    "experience": 8,
-    "licence_number": "IM-CL-11903"
+    "lawyerId": "LW-1005",
+    "lawyerImage": "https://randomuser.me/api/portraits/women/52.jpg",
+    "lawyerName": "Lina Karim",
+    "lawyerDesignation": "Senior Associate",
+    "speciality": "Employment Law",
+    "experience": "9",
+    "licenceNumber": "LN-2016-2209"
   },
   {
-    "lawyer_image": "https://randomuser.me/api/portraits/men/5.jpg",
-    "lawyer_name": "Yousef Naji",
-    "lawyer": "Partner",
-    "speciality": "Tax Law",
-    "experience": 16,
-    "licence_number": "TAX-BAR-88960"
+    "lawyerId": "LW-1006",
+    "lawyerImage": "https://randomuser.me/api/portraits/men/68.jpg",
+    "lawyerName": "Faraz Qureshi",
+    "lawyerDesignation": "Associate",
+    "speciality": "Real Estate",
+    "experience": "5",
+    "licenceNumber": "LN-2020-1114"
   },
   {
-    "lawyer_image": "https://randomuser.me/api/portraits/women/27.jpg",
-    "lawyer_name": "Mariam Zaki",
-    "lawyer_designation": "Associate",
+    "lawyerId": "LW-1007",
+    "lawyerImage": "https://randomuser.me/api/portraits/women/81.jpg",
+    "lawyerName": "Nadia Hossain",
+    "lawyerDesignation": "Of Counsel",
     "speciality": "Banking & Finance",
-    "experience": 7,
-    "licence_number": "BF-LN-66204"
+    "experience": "12",
+    "licenceNumber": "LN-2012-7782"
   },
   {
-    "lawyer_image": "https://randomuser.me/api/portraits/men/49.jpg",
-    "lawyer_name": "Adnan Qureshi",
-    "lawyer_designation": "Senior Attorney",
-    "speciality": "Arbitration & ADR",
-    "experience": 13,
-    "licence_number": "ADR-AT-73518"
+    "lawyerId": "LW-1008",
+    "lawyerImage": "https://randomuser.me/api/portraits/men/11.jpg",
+    "lawyerName": "Usman Rafi",
+    "lawyerDesignation": "Junior Associate",
+    "speciality": "Immigration",
+    "experience": "3",
+    "licenceNumber": "LN-2022-4450"
   },
   {
-    "lawyer_image": "https://randomuser.me/api/portraits/women/53.jpg",
-    "lawyer_name": "Rania Selim",
-    "lawyer_designation": "Counsel",
+    "lawyerId": "LW-1009",
+    "lawyerImage": "https://randomuser.me/api/portraits/women/6.jpg",
+    "lawyerName": "Mariam Aziz",
+    "lawyerDesignation": "Managing Partner",
+    "speciality": "Commercial Litigation",
+    "experience": "20",
+    "licenceNumber": "LN-2005-0029"
+  },
+  {
+    "lawyerId": "LW-1010",
+    "lawyerImage": "https://randomuser.me/api/portraits/men/5.jpg",
+    "lawyerName": "Bilal Khan",
+    "lawyerDesignation": "Associate",
+    "speciality": "Tax Law",
+    "experience": "6",
+    "licenceNumber": "LN-2019-6673"
+  },
+  {
+    "lawyerId": "LW-1011",
+    "lawyerImage": "https://randomuser.me/api/portraits/women/84.jpg",
+    "lawyerName": "Hina Zafar",
+    "lawyerDesignation": "Legal Advisor",
     "speciality": "Environmental Law",
-    "experience": 9,
-    "licence_number": "ENV-LN-25791"
+    "experience": "8",
+    "licenceNumber": "LN-2017-5890"
+  },
+  {
+    "lawyerId": "LW-1012",
+    "lawyerImage": "https://randomuser.me/api/portraits/men/27.jpg",
+    "lawyerName": "Adnan Malik",
+    "lawyerDesignation": "Consultant",
+    "speciality": "Cybersecurity Law",
+    "experience": "11",
+    "licenceNumber": "LN-2014-9732"
   }
 ]
