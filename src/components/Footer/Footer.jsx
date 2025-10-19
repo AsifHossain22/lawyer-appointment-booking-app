@@ -32,14 +32,25 @@ const Footer = () => {
 
       {/* SocialMediaLinks */}
       <nav className="grid grid-flow-col gap-4">
-        <a className="link link-hover">
+        <a
+          className="link link-hover"
+          href="https://github.com/AsifHossain22"
+          target="_blank"
+        >
           <Github className="socialMediaIcon duration-300" />
         </a>
-        <a className="link link-hover">
-          {" "}
+        <a
+          className="link link-hover"
+          href="https://www.linkedin.com/in/asifhossain22/"
+          target="_blank"
+        >
           <Linkedin className="socialMediaIcon duration-300" />
         </a>
-        <a className="link link-hover">
+        <a
+          className="link link-hover"
+          href="https://twitter.com/AsifHossain22"
+          target="_blank"
+        >
           <Twitter className="socialMediaIcon duration-300" />
         </a>
       </nav>

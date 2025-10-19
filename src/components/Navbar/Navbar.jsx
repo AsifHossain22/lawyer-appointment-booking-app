@@ -1,4 +1,5 @@
 import React from "react";
+import { NavLink } from "react-router";
 
 const Navbar = () => {
   return (
@@ -27,26 +28,10 @@ const Navbar = () => {
             tabIndex={0}
             className="menu menu-sm dropdown-content bg-base-100 rounded-box z-1 mt-3 w-52 p-2 shadow"
           >
-            <li>
-              <a className="hover:bg-transparent text-base font-semibold hover:text-[#0EA106] hover:shadow-none">
-                Home
-              </a>
-            </li>
-            <li>
-              <a className="hover:bg-transparent text-base font-semibold hover:text-[#0EA106] hover:shadow-none">
-                My Bookings
-              </a>
-            </li>
-            <li>
-              <a className="hover:bg-transparent text-base font-semibold hover:text-[#0EA106] hover:shadow-none">
-                Blogs
-              </a>
-            </li>
-            <li>
-              <a className="hover:bg-transparent text-base font-semibold hover:text-[#0EA106] hover:shadow-none">
-                404
-              </a>
-            </li>
+            <NavLink to="/">Home</NavLink>
+            <NavLink to="/my-bookings">My Bookings</NavLink>
+            <NavLink to="/blogs">Blogs</NavLink>
+            <NavLink to="/404">404</NavLink>
           </ul>
         </div>
         {/* Logo */}
@@ -59,27 +44,38 @@ const Navbar = () => {
       </div>
       {/* DesktopMenu */}
       <div className="navbar-center hidden lg:flex">
-        <ul className="menu menu-horizontal px-1 gap-5">
-          <li>
-            <a className="hover:bg-transparent text-base font-semibold hover:text-[#0EA106] hover:shadow-none">
-              Home
-            </a>
-          </li>
-          <li>
-            <a className="hover:bg-transparent text-base font-semibold hover:text-[#0EA106] hover:shadow-none">
-              My Bookings
-            </a>
-          </li>
-          <li>
-            <a className="hover:bg-transparent text-base font-semibold hover:text-[#0EA106] hover:shadow-none">
-              Blogs
-            </a>
-          </li>
-          <li>
-            <a className="hover:bg-transparent text-base font-semibold hover:text-[#0EA106] hover:shadow-none">
-              404
-            </a>
-          </li>
+        <ul className="menu menu-horizontal px-1 gap-10">
+          <NavLink
+            to="/"
+            end
+            className={({ isActive }) =>
+              isActive
+                ? "text-[#0EA106] text-base font-semibold"
+                : "hover:text-[#0EA106] text-base font-semibold duration-300"
+            }
+          >
+            Home
+          </NavLink>
+          <NavLink
+            to="/my-bookings"
+            className={({ isActive }) =>
+              isActive
+                ? "text-[#0EA106] text-base font-semibold"
+                : "hover:text-[#0EA106] text-base font-semibold duration-300"
+            }
+          >
+            My Bookings
+          </NavLink>
+          <NavLink
+            to="/blogs"
+            className={({ isActive }) =>
+              isActive
+                ? "text-[#0EA106] text-base font-semibold"
+                : "hover:text-[#0EA106] text-base font-semibold duration-300"
+            }
+          >
+            Blogs
+          </NavLink>
         </ul>
       </div>
       <div className="navbar-end">
