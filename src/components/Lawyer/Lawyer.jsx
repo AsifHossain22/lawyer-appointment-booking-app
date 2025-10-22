@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router";
 
 const Lawyer = ({ lawyer }) => {
   // console.log(lawyer);
@@ -13,7 +14,7 @@ const Lawyer = ({ lawyer }) => {
         <div className="flex items-center gap-14">
           {/* Lawyer's Image Container */}
           <div className="w-4/12">
-            <img src={lawyerImage} alt="" className="w-[160px]" />
+            <img src={lawyerImage} alt="" className="w-[160px] rounded-xl" />
           </div>
           {/* Lawyer's Details Container */}
           <div className="w-8/12 flex flex-col gap-1.5">
@@ -40,9 +41,12 @@ const Lawyer = ({ lawyer }) => {
             </p>
             {/* Lawyer's Details Button */}
             <div>
-              <button className="w-full border border-[#176AE520] rounded-full text-[#176AE5] hover:text-white px-3.5 py-2 cursor-pointer hover:bg-[#176AE5] duration-300">
+              <Link
+                to={`/lawyers/${lawyer.lawyerId}`}
+                className="w-full block text-center border border-[#176AE520] rounded-full text-[#176AE5] hover:text-white px-3.5 py-2 cursor-pointer hover:bg-[#176AE5] duration-300"
+              >
                 View Details
-              </button>
+              </Link>
             </div>
           </div>
         </div>

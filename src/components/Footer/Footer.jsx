@@ -2,6 +2,7 @@ import React from "react";
 import { Github } from "lucide-react";
 import { Linkedin } from "lucide-react";
 import { Twitter } from "lucide-react";
+import { NavLink } from "react-router";
 
 const Footer = () => {
   return (
@@ -15,15 +16,37 @@ const Footer = () => {
 
         {/* FooterMenu */}
         <nav className="grid grid-flow-col gap-12">
-          <a className="hover:bg-transparent text-base font-semibold hover:text-[#0EA106] cursor-pointer duration-300">
+          <NavLink
+            to="/"
+            end
+            className={({ isActive }) =>
+              isActive
+                ? "text-[#0EA106] text-base font-semibold"
+                : "hover:text-[#0EA106] text-base font-semibold duration-300"
+            }
+          >
             Home
-          </a>
-          <a className="hover:bg-transparent text-base font-semibold hover:text-[#0EA106] cursor-pointer duration-300">
+          </NavLink>
+          <NavLink
+            to="/my-bookings"
+            className={({ isActive }) =>
+              isActive
+                ? "text-[#0EA106] text-base font-semibold"
+                : "hover:text-[#0EA106] text-base font-semibold duration-300"
+            }
+          >
             My Bookings
-          </a>
-          <a className="hover:bg-transparent text-base font-semibold hover:text-[#0EA106] cursor-pointer duration-300">
+          </NavLink>
+          <NavLink
+            to="/blogs"
+            className={({ isActive }) =>
+              isActive
+                ? "text-[#0EA106] text-base font-semibold"
+                : "hover:text-[#0EA106] text-base font-semibold duration-300"
+            }
+          >
             Blogs
-          </a>
+          </NavLink>
         </nav>
       </aside>
 
