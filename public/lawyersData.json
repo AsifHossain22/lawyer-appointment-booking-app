@@ -6,7 +6,9 @@
     "lawyerDesignation": "Senior Partner",
     "speciality": "Family Law",
     "experience": "15",
-    "licenceNumber": "LN-2015-4587"
+    "licenceNumber": "LN-2015-4587",
+    "consultationFee": "$200/hour",
+    "availability": ["Monday", "Tuesday", "Thursday", "Friday"]
   },
   {
     "lawyerId": "LW-1002",
@@ -15,7 +17,9 @@
     "lawyerDesignation": "Associate",
     "speciality": "Corporate Law",
     "experience": "7",
-    "licenceNumber": "LN-2018-3321"
+    "licenceNumber": "LN-2018-3321",
+    "consultationFee": "$150/hour",
+    "availability": ["Monday", "Wednesday", "Thursday"]
   },
   {
     "lawyerId": "LW-1003",
@@ -24,7 +28,9 @@
     "lawyerDesignation": "Counsel",
     "speciality": "Intellectual Property",
     "experience": "10",
-    "licenceNumber": "LN-2013-9076"
+    "licenceNumber": "LN-2013-9076",
+    "consultationFee": "$180/hour",
+    "availability": ["Tuesday", "Wednesday", "Thursday", "Friday"]
   },
   {
     "lawyerId": "LW-1004",
@@ -33,7 +39,9 @@
     "lawyerDesignation": "Partner",
     "speciality": "Criminal Defense",
     "experience": "18",
-    "licenceNumber": "LN-2007-6543"
+    "licenceNumber": "LN-2007-6543",
+    "consultationFee": "$250/hour",
+    "availability": ["Monday", "Tuesday", "Wednesday", "Friday", "Saturday"]
   },
   {
     "lawyerId": "LW-1005",
@@ -42,7 +50,9 @@
     "lawyerDesignation": "Senior Associate",
     "speciality": "Employment Law",
     "experience": "9",
-    "licenceNumber": "LN-2016-2209"
+    "licenceNumber": "LN-2016-2209",
+    "consultationFee": "$160/hour",
+    "availability": ["Monday", "Tuesday", "Friday"]
   },
   {
     "lawyerId": "LW-1006",
@@ -51,7 +61,9 @@
     "lawyerDesignation": "Associate",
     "speciality": "Real Estate",
     "experience": "5",
-    "licenceNumber": "LN-2020-1114"
+    "licenceNumber": "LN-2020-1114",
+    "consultationFee": "$130/hour",
+    "availability": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"]
   },
   {
     "lawyerId": "LW-1007",
@@ -60,7 +72,9 @@
     "lawyerDesignation": "Of Counsel",
     "speciality": "Banking & Finance",
     "experience": "12",
-    "licenceNumber": "LN-2012-7782"
+    "licenceNumber": "LN-2012-7782",
+    "consultationFee": "$190/hour",
+    "availability": ["Monday", "Wednesday", "Thursday", "Friday"]
   },
   {
     "lawyerId": "LW-1008",
@@ -69,7 +83,9 @@
     "lawyerDesignation": "Junior Associate",
     "speciality": "Immigration",
     "experience": "3",
-    "licenceNumber": "LN-2022-4450"
+    "licenceNumber": "LN-2022-4450",
+    "consultationFee": "$100/hour",
+    "availability": ["Tuesday", "Thursday", "Friday"]
   },
   {
     "lawyerId": "LW-1009",
@@ -78,7 +94,9 @@
     "lawyerDesignation": "Managing Partner",
     "speciality": "Commercial Litigation",
     "experience": "20",
-    "licenceNumber": "LN-2005-0029"
+    "licenceNumber": "LN-2005-0029",
+    "consultationFee": "$300/hour",
+    "availability": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"]
   },
   {
     "lawyerId": "LW-1010",
@@ -87,7 +105,9 @@
     "lawyerDesignation": "Associate",
     "speciality": "Tax Law",
     "experience": "6",
-    "licenceNumber": "LN-2019-6673"
+    "licenceNumber": "LN-2019-6673",
+    "consultationFee": "$140/hour",
+    "availability": ["Monday", "Tuesday", "Wednesday"]
   },
   {
     "lawyerId": "LW-1011",
@@ -96,7 +116,9 @@
     "lawyerDesignation": "Legal Advisor",
     "speciality": "Environmental Law",
     "experience": "8",
-    "licenceNumber": "LN-2017-5890"
+    "licenceNumber": "LN-2017-5890",
+    "consultationFee": "$170/hour",
+    "availability": ["Monday", "Tuesday", "Thursday", "Friday"]
   },
   {
     "lawyerId": "LW-1012",
@@ -105,6 +127,8 @@
     "lawyerDesignation": "Consultant",
     "speciality": "Cybersecurity Law",
     "experience": "11",
-    "licenceNumber": "LN-2014-9732"
+    "licenceNumber": "LN-2014-9732",
+    "consultationFee": "$210/hour",
+    "availability": ["Monday", "Tuesday", "Wednesday", "Thursday"]
   }
 ]
