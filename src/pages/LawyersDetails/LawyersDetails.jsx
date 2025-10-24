@@ -17,6 +17,12 @@ const LawyersDetails = () => {
     );
   }
 
+  // GetWeekdayName
+  const today = new Date().toLocaleDateString("en-US", { weekday: "long" });
+
+  // CheckLawyerAvailability
+  const isAvailableToday = lawyer.availability.includes(today);
+
   return (
     <div>
       {/* SectionTitle */}
@@ -70,9 +76,17 @@ const LawyersDetails = () => {
         </h2>
         <div className="flex justify-between items-center border-b border-[#14141410] pb-6 mb-6">
           <span className="text-[#141414] text-lg font-bold">Availability</span>
-          <span className="badge badge-soft badge-success rounded-full">
-            Available Today
-          </span>
+
+          {/* DynamicAvailability */}
+          {isAvailableToday ? (
+            <span className="badge badge-soft badge-success rounded-full">
+              Available Today
+            </span>
+          ) : (
+            <span className="badge badge-soft badge-error rounded-full">
+              Not Available Today
+            </span>
+          )}
         </div>
         {/* Alert */}
         <div
