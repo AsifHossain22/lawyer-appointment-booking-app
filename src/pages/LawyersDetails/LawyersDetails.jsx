@@ -1,10 +1,29 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { Link, useLoaderData, useParams } from "react-router";
 
 const LawyersDetails = () => {
   const { lawyerId } = useParams();
+  console.log(lawyerId);
   const lawyers = useLoaderData();
-  const lawyer = lawyers.find((item) => item.lawyerId === lawyerId);
+  const lawyer = lawyers?.find((item) => item?.lawyerId === lawyerId);
+
+  // CheckIfAlreadyBookedAfterPageLoad
+  useEffect(() => {
+    const existingBookings = JSON.parse(localStorage.getItem("bookings")) || [];
+    const alreadyBooked = existingBookings.some(
+      (booking) => booking?.lawyerId === lawyer?.lawyerId
+    );
+
+    if (alreadyBooked) {
+      const confirmBookingButton = document.getElementById("bookingButton");
+
+      if (confirmBookingButton) {
+        confirmBookingButton.textContent = "Booked";
+        confirmBookingButton.disabled = true;
+        confirmBookingButton.style.opacity = "0.6";
+      }
+    }
+  }, [lawyer?.lawyerId]);
 
   if (!lawyer) {
     return (
@@ -21,7 +40,27 @@ const LawyersDetails = () => {
   const today = new Date().toLocaleDateString("en-US", { weekday: "long" });
 
   // CheckLawyerAvailability
-  const isAvailableToday = lawyer.availability.includes(today);
+  const isAvailableToday = lawyer?.availability.includes(today);
+
+  // HandleBooking
+  const handleBooking = (lawyer) => {
+    const existingBookings = JSON.parse(localStorage.getItem("bookings")) || [];
+
+    // CheckIfAlreadyBooked
+    const alreadyBooked = existingBookings.some(
+      (booking) => booking?.lawyerId === lawyer?.lawyerId
+    );
+
+    if (!alreadyBooked) {
+      existingBookings.push(lawyer);
+      localStorage.setItem("bookings", JSON.stringify(existingBookings));
+
+      const confirmBookingButton = document.getElementById("bookingButton");
+      confirmBookingButton.textContent = "Booked";
+      confirmBookingButton.disabled = true;
+      confirmBookingButton.style.opacity = "0.6";
+    }
+  };
 
   return (
     <div>
@@ -54,8 +93,11 @@ const LawyersDetails = () => {
             <span>Licence Number: {lawyer.licenceNumber}</span>
           </p>
           <div className="flex items-center gap-2.5 my-4">
-            {lawyer.availability.map((day) => (
-              <button className="badge badge-soft badge-warning rounded-full">
+            {lawyer?.availability.map((day, index) => (
+              <button
+                key={index}
+                className="badge badge-soft badge-warning rounded-full"
+              >
                 {day}
               </button>
             ))}
@@ -63,7 +105,7 @@ const LawyersDetails = () => {
           <p className="text-gray-500">
             Consultation Fee :{" "}
             <span className="text-[#0EA106] font-extrabold">
-              {lawyer.consultationFee}
+              {lawyer?.consultationFee}
             </span>
           </p>
         </div>
@@ -116,12 +158,13 @@ const LawyersDetails = () => {
         </div>
         {/* BookingButton */}
         <div className="mt-4">
-          <Link
-            to={``}
+          <button
+            onClick={() => handleBooking(lawyer)}
+            id="bookingButton"
             className="w-full block text-center border border-[#0EA106] rounded-full text-xl font-bold text-white hover:text-[#0EA106] px-3.5 py-2 cursor-pointer bg-[#0EA106] hover:bg-transparent duration-300"
           >
             Book Appointment Now
-          </Link>
+          </button>
         </div>
       </div>
     </div>

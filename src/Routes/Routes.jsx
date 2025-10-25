@@ -14,9 +14,13 @@ export const router = createBrowserRouter([
     children: [
       {
         index: true,
-        loader: () => fetch("lawyersData.json"),
         path: "/",
         Component: Home,
+        loader: async () => {
+          const res = await fetch("lawyersData.json");
+          const data = await res.json();
+          return data;
+        },
       },
       {
         path: "/my-bookings",
@@ -28,8 +32,12 @@ export const router = createBrowserRouter([
       },
       {
         path: "lawyers/:lawyerId",
-        loader: () => fetch("lawyersData.json"),
         Component: LawyersDetails,
+        loader: async () => {
+          const res = await fetch("lawyersData.json");
+          const data = await res.json();
+          return data;
+        },
       },
     ],
   },
