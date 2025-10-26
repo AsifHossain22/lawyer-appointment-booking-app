@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { useNavigate } from "react-router";
 import { toast } from "react-toastify";
+import RechartBarChart from "../../components/RechartBarChart/RechartBarChart";
 
 const MyBookings = () => {
   const [bookings, setBookings] = useState([]);
@@ -19,6 +20,9 @@ const MyBookings = () => {
     setBookings(updatedBookings);
     localStorage.setItem("bookings", JSON.stringify(updatedBookings));
 
+    // UpdatedRechartDataAfterCancellation
+    window.dispatchEvent(new Event("storage"));
+
     // CancelledAppointmentToastify
     toast.info("Appointment cancelled successfully!");
   };
@@ -28,10 +32,13 @@ const MyBookings = () => {
 
   return (
     <div className="py-20">
+      {/* RechartSection */}
+      <RechartBarChart></RechartBarChart>
+
       {/* SectionTitle */}
       <div className="text-center">
         <h2 className="text-[#0F0F0F] text-[40px] font-extrabold mb-4">
-          My Today Appointments
+          My Today's Appointments
         </h2>
         <p className="w-10/12 mx-auto">
           Our platform connects you with verified, experienced Lawyers across
