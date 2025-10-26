@@ -5,7 +5,7 @@ const LawyersDetails = () => {
   const { lawyerId } = useParams();
   console.log(lawyerId);
   const lawyers = useLoaderData();
-  const lawyer = lawyers?.find((item) => item?.lawyerId === lawyerId);
+  const lawyer = lawyers.find((item) => item?.lawyerId === lawyerId);
 
   // CheckIfAlreadyBookedAfterPageLoad
   useEffect(() => {
@@ -21,6 +21,13 @@ const LawyersDetails = () => {
         confirmBookingButton.textContent = "Booked";
         confirmBookingButton.disabled = true;
         confirmBookingButton.style.opacity = "0.6";
+        confirmBookingButton.style.cursor = "not-allowed";
+        confirmBookingButton.style.backgroundColor = "#c5c5c5";
+        confirmBookingButton.style.borderColor = "#c5c5c5";
+        confirmBookingButton.classList.remove(
+          "hover:bg-[#0EA106]",
+          "hover:text-[#0EA106]"
+        );
       }
     }
   }, [lawyer?.lawyerId]);
@@ -59,6 +66,13 @@ const LawyersDetails = () => {
       confirmBookingButton.textContent = "Booked";
       confirmBookingButton.disabled = true;
       confirmBookingButton.style.opacity = "0.6";
+      confirmBookingButton.style.cursor = "not-allowed";
+      confirmBookingButton.style.backgroundColor = "#c5c5c5";
+      confirmBookingButton.style.borderColor = "#c5c5c5";
+      confirmBookingButton.classList.remove(
+        "hover:bg-[#0EA106]",
+        "hover:text-[#0EA106]"
+      );
     }
   };
 
