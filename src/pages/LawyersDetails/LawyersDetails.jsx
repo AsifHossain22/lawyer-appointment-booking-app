@@ -1,10 +1,11 @@
 import React, { useEffect } from "react";
-import { Link, useLoaderData, useParams } from "react-router";
+import { Link, useLoaderData, useNavigate, useParams } from "react-router";
 
 const LawyersDetails = () => {
   const { lawyerId } = useParams();
   console.log(lawyerId);
   const lawyers = useLoaderData();
+  const navigate = useNavigate();
   const lawyer = lawyers.find((item) => item?.lawyerId === lawyerId);
 
   // CheckIfAlreadyBookedAfterPageLoad
@@ -73,6 +74,9 @@ const LawyersDetails = () => {
         "hover:bg-[#0EA106]",
         "hover:text-[#0EA106]"
       );
+
+      // NavigateToMyBookingsPage
+      navigate("/my-bookings");
     }
   };
 
