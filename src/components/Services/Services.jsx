@@ -1,6 +1,38 @@
 import React from "react";
+import CountUp from "react-countup";
 
 const Services = () => {
+  const servicesData = [
+    {
+      id: 1,
+      image: "lawyer.png",
+      number: 199,
+      suffix: "+",
+      title: "Total Layer",
+    },
+    {
+      id: 2,
+      image: "success-review.png",
+      number: 467,
+      suffix: "+",
+      title: "Total Reviews",
+    },
+    {
+      id: 3,
+      image: "success-layer.png",
+      number: 1900,
+      suffix: "+",
+      title: "Case Initiated",
+    },
+    {
+      id: 4,
+      image: "success-staffs.png",
+      number: 300,
+      suffix: "+",
+      title: "Total Staffs",
+    },
+  ];
+
   return (
     <div className="mt-10">
       {/* SectionTitle */}
@@ -16,50 +48,30 @@ const Services = () => {
 
       {/* ServiceCardContainer */}
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 py-10">
-        {/* ServiceCard - 1 */}
-        <div className="px-12 py-10 bg-[#0F0F0F05] rounded-2xl">
-          {/* ServiceImage */}
-          <div>
-            <img src="lawyer.png" alt="" className="w-16" />
+        {servicesData.map((service) => (
+          <div
+            key={service?.id}
+            className="px-12 py-10 bg-[#0F0F0F05] rounded-2xl"
+          >
+            {/* ServiceImage */}
+            <div>
+              <img src={service?.image} className="w-16" />
+            </div>
+            {/* AnimateNumber */}
+            <h4 className="text-[#0F0F0F] text-5xl font-extrabold pt-4 pb-3">
+              <CountUp
+                end={service?.number}
+                duration={3}
+                separator=","
+                enableScrollSpy
+              />
+              {service?.suffix}
+            </h4>
+            <p className="text-[#0F0F0F60] text-xl font-medium">
+              {service?.title}
+            </p>
           </div>
-          <h4 className="text-[#0F0F0F] text-5xl font-extrabold pt-4 pb-3">
-            199+
-          </h4>
-          <p className="text-[#0F0F0F60] text-xl font-medium">Total Layer</p>
-        </div>
-        {/* ServiceCard - 2 */}
-        <div className="px-12 py-10 bg-[#0F0F0F05] rounded-2xl">
-          {/* ServiceImage */}
-          <div>
-            <img src="success-review.png" alt="" className="w-16" />
-          </div>
-          <h4 className="text-[#0F0F0F] text-5xl font-extrabold pt-4 pb-3">
-            467+
-          </h4>
-          <p className="text-[#0F0F0F60] text-xl font-medium">Total Reviews</p>
-        </div>
-        {/* ServiceCard - 3 */}
-        <div className="px-12 py-10 bg-[#0F0F0F05] rounded-2xl">
-          {/* ServiceImage */}
-          <div>
-            <img src="success-layer.png" alt="" className="w-16" />
-          </div>
-          <h4 className="text-[#0F0F0F] text-5xl font-extrabold pt-4 pb-3">
-            1900+
-          </h4>
-          <p className="text-[#0F0F0F60] text-xl font-medium">Case Initiated</p>
-        </div>
-        {/* ServiceCard - 4 */}
-        <div className="px-12 py-10 bg-[#0F0F0F05] rounded-2xl">
-          {/* ServiceImage */}
-          <div>
-            <img src="success-staffs.png" alt="" className="w-16" />
-          </div>
-          <h4 className="text-[#0F0F0F] text-5xl font-extrabold pt-4 pb-3">
-            300+
-          </h4>
-          <p className="text-[#0F0F0F60] text-xl font-medium">Total Staffs</p>
-        </div>
+        ))}
       </div>
     </div>
   );
