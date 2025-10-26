@@ -1,19 +1,89 @@
 @import "tailwindcss";
 @plugin "daisyui";
 
+/* BannerSection */
 .bannerContainer {
-  background: url(../src/assets/banner.png), center center, no-repeat;
+  background: url(../src/assets/banner.png) center center no-repeat;
   background-size: cover;
 }
 .bannerContent {
   min-height: 90vh;
+  padding: 4rem 1rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
 }
+.bannerContent h1 {
+  font-size: 1.75rem;
+  line-height: 1.2;
+  font-weight: 800;
+  width: 100%;
+}
+.bannerContent p {
+  width: 100%;
+  margin-top: 1rem;
+  font-weight: 500;
+  font-size: 0.9rem;
+}
+
+/* TabletDevice */
+@media (min-width: 768px) {
+  .bannerContent {
+    padding: 6rem 2rem;
+  }
+  .bannerContent h1 {
+    font-size: 2.25rem;
+    width: 80%;
+  }
+  .bannerContent p {
+    font-size: 1rem;
+    width: 75%;
+  }
+}
+
+/* DesktopDevice */
+@media (min-width: 1024px) {
+  .bannerContent {
+    padding: 8rem 0;
+  }
+  .bannerContent h1 {
+    font-size: 3rem;
+    width: 60%;
+  }
+  .bannerContent p {
+    font-size: 1.125rem;
+    width: 55%;
+  }
+}
+
+/* SocialMediaIconsHover */
 .socialMediaIcon:hover {
   color: #0ea106;
 }
+
+/* ErrorPage */
 .errorPage {
-  background: url(../src/assets/404.png), center center, no-repeat;
+  background: url(../src/assets/404.png) center center no-repeat;
   background-size: cover;
   min-height: 90vh;
-  padding: 20px 0;
+  padding: 20px 1rem;
+  display: flex;
+  justify-content: center;
+  align-items: end;
+}
+
+/* TabletDevice */
+@media (min-width: 768px) {
+  .errorPage {
+    padding: 40px 2rem;
+  }
+}
+
+/* DesktopDevice */
+@media (min-width: 1024px) {
+  .errorPage {
+    padding: 80px 4rem;
+  }
 }

@@ -15,18 +15,16 @@ const Lawyer = ({ lawyer }) => {
   return (
     <div>
       {/* LawyersCard */}
-      <div className="border border-[#0F0F0F15] rounded-2xl p-6">
-        {/* LawyersInfo */}
-        <div className="flex items-center gap-14">
-          {/* Lawyer's Image Container */}
-          <div className="w-4/12">
-            <img src={lawyerImage} alt="" className="w-[160px] rounded-xl" />
+      <div className="border border-[#0F0F0F15] rounded-2xl p-4 sm:p-6 lg:p-6">
+        <div className="flex flex-col sm:flex-row items-center justify-start lg:items-center sm:items-start gap-4 sm:gap-14">
+          <div className="w-full sm:w-4/12 flex justify-center lg:justify-start sm:justify-start">
+            <img
+              src={lawyerImage}
+              className="w-[120px] sm:w-[160px] rounded-xl"
+            />
           </div>
-          {/* Lawyer's Details Container */}
-          <div className="w-8/12 flex flex-col gap-1.5">
-            {/* Availablity & Experience */}
-            <div className="flex items-center gap-2.5">
-              {/* DynamicAvailability */}
+          <div className="w-full sm:w-8/12 flex flex-col gap-2">
+            <div className="flex flex-col sm:flex-row items-center gap-2 sm:gap-2.5">
               {isAvailableToday ? (
                 <span className="badge badge-soft badge-success rounded-full">
                   Available Today
@@ -40,23 +38,19 @@ const Lawyer = ({ lawyer }) => {
                 {lawyer.experience}+ Years Experience
               </span>
             </div>
-            {/* Lawyer's Title */}
-            <h4 className="text-[#0F0F0F] text-2xl font-extrabold">
+            <h4 className="text-[#0F0F0F] text-xl sm:text-2xl font-extrabold text-center md:text-left">
               {lawyerName}
             </h4>
-            {/* Lawyer's Designation */}
-            <h6 className="text-[#0F0F0F60] text-lg font-medium">
+            <h6 className="text-[#0F0F0F60] text-sm sm:text-lg font-medium text-center md:text-left">
               {lawyerDesignation}
             </h6>
-            {/* Lawyer's Licence No. */}
-            <p className="text-[#0F0F0F70] font-medium">
+            <p className="text-[#0F0F0F70] font-medium text-center md:text-left">
               &#174; Licence No: {licenceNumber}
             </p>
-            {/* Lawyer's Details Button */}
             <div>
               <Link
                 to={`lawyers/${lawyer.lawyerId}`}
-                className="w-full block text-center border border-[#176AE520] rounded-full text-[#176AE5] hover:text-white px-3.5 py-2 cursor-pointer hover:bg-[#176AE5] duration-300"
+                className="w-full sm:w-auto block text-center border border-[#176AE520] rounded-full text-[#176AE5] hover:text-white px-3.5 py-2 cursor-pointer hover:bg-[#176AE5] duration-300 mt-2 sm:mt-0"
               >
                 View Details
               </Link>

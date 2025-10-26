@@ -85,13 +85,13 @@ const LawyersDetails = () => {
   };
 
   return (
-    <div>
+    <div className="px-4 max-w-7xl mx-auto">
       {/* SectionTitle */}
-      <div className="p-[72px] border border-[#0F0F0F15] bg-[#0F0F0F05] rounded-2xl text-center">
-        <h1 className="text-[32px] text-[#141414] font-extrabold">
+      <div cclassName="p-6 md:p-12 border border-[#0F0F0F15] bg-[#0F0F0F05] rounded-2xl text-center">
+        <h1 className="text-2xl md:text-4xl text-[#141414] font-extrabold">
           Lawyer’s Profile Details
         </h1>
-        <p className="text-[#14141470] text-lg font-medium w-12/12 mx-auto">
+        <p className="text-[#14141470] text-sm md:text-lg font-medium mt-4">
           Lorem ipsum dolor sit amet consectetur. Sit enim blandit orci tortor
           amet ut. Suscipit sed est fermentum magna. Quis vitae tempus facilisis
           turpis imperdiet mattis donec dignissim volutpat.
@@ -99,22 +99,24 @@ const LawyersDetails = () => {
       </div>
 
       {/* LawyersInfoSection */}
-      <div className="my-10 p-8 border border-[#14141415] rounded-xl flex items-center gap-10">
+      <div className="my-10 p-6 md:p-8 border border-[#14141415] rounded-xl flex flex-col lg:flex-row lg:items-center gap-6 lg:gap-10">
         {/* LawyerImage */}
         <div>
-          <img src={lawyer.lawyerImage} className="w-[250px] rounded-xl" />
+          <img src={lawyer.lawyerImage} className="lg:w-[250px] rounded-xl" />
         </div>
         {/* LawyerInfo */}
-        <div>
+        <div className="flex-1">
           <p className="inline-block text-sm font-medium bg-blue-200 text-blue-400 py-1.5 px-3 rounded-full cursor-pointer">
             {lawyer.experience}+ Years Experience
           </p>
-          <h2 className="text-2xl font-bold mt-4 mb-1">{lawyer.lawyerName}</h2>
-          <p className="text-gray-500 flex items-center gap-10">
+          <h2 className="text-xl md:text-2xl font-bold mt-4 mb-1">
+            {lawyer.lawyerName}
+          </h2>
+          <p className="text-gray-500 flex flex-col md:flex-row gap-2 md:gap-10">
             <span>{lawyer.speciality}</span>
             <span>Licence Number: {lawyer.licenceNumber}</span>
           </p>
-          <div className="flex items-center gap-2.5 my-4">
+          <div className="flex flex-wrap gap-2 my-4">
             {lawyer?.availability.map((day, index) => (
               <button
                 key={index}
@@ -134,10 +136,11 @@ const LawyersDetails = () => {
       </div>
 
       {/* BookLawyer */}
-      <div className="mb-24 p-8 rounded-2xl border border-[#14141415]">
-        <h2 className="text-[#141414] text-2xl font-bold text-center border-dashed border-b border-[#14141410] pb-6 mb-6">
+      <div className="mb-24 p-6 md:p-8 rounded-2xl border border-[#14141415]">
+        <h2 className="text-[#141414] text-xl md:text-2xl font-bold text-center border-dashed border-b border-[#14141410] pb-6 mb-6">
           Book an Appointment
         </h2>
+
         <div className="flex justify-between items-center border-b border-[#14141410] pb-6 mb-6">
           <span className="text-[#141414] text-lg font-bold">Availability</span>
 
@@ -179,7 +182,7 @@ const LawyersDetails = () => {
           </div>
         </div>
         {/* BookingButton */}
-        <div className="mt-4">
+        <div className="mt-4 w-full lg:w-auto">
           <button
             onClick={() => handleBooking(lawyer)}
             id="bookingButton"

@@ -36,14 +36,12 @@ const getPath = (x, y, width, height) => {
     Z`;
 };
 
-const TriangleBar = (props) => {
-  const { fill, x, y, width, height } = props;
-  return <path d={getPath(x, y, width, height)} stroke="none" fill={fill} />;
-};
+const TriangleBar = ({ fill, x, y, width, height }) => (
+  <path d={getPath(x, y, width, height)} stroke="none" fill={fill} />
+);
 
 const extractNumericFee = (feeString) => {
   if (!feeString && feeString !== 0) return 0;
-  // Remove non-numeric characters except dot
   const num = feeString.toString().replace(/[^0-9.]/g, "");
   const parsed = parseFloat(num);
   return Number.isFinite(parsed) ? parsed : 0;
@@ -51,6 +49,7 @@ const extractNumericFee = (feeString) => {
 
 const RechartBarChart = () => {
   const [chartData, setChartData] = useState([]);
+  const [chartHeight, setChartHeight] = useState(420); // default desktop height
 
   useEffect(() => {
     const loadChartData = () => {
@@ -64,44 +63,46 @@ const RechartBarChart = () => {
     };
 
     loadChartData();
-
-    // Listen for changes from localStorage or cancel button
     window.addEventListener("storage", loadChartData);
+
+    // Responsive height based on window width
+    const handleResize = () => {
+      if (window.innerWidth < 640) setChartHeight(300); // mobile
+      else if (window.innerWidth < 1024) setChartHeight(360); // tablet
+      else setChartHeight(420); // desktop
+    };
+
+    handleResize(); // set initial
+    window.addEventListener("resize", handleResize);
 
     return () => {
       window.removeEventListener("storage", loadChartData);
+      window.removeEventListener("resize", handleResize);
     };
   }, []);
 
-  // IfNoLawyerDataHideChart
   if (!chartData || chartData.length === 0) return null;
 
   return (
-    <div className="mb-10 w-full flex justify-center">
-      <div style={{ width: "100%", height: 420 }}>
+    <div className="mb-10 w-full flex justify-center px-4">
+      <div style={{ width: "100%", height: chartHeight }}>
         <ResponsiveContainer width="100%" height="100%">
           <BarChart
             data={chartData}
-            margin={{
-              top: 20,
-              right: 30,
-              left: 0,
-              bottom: 5,
-            }}
+            margin={{ top: 20, right: 30, left: 0, bottom: 5 }}
           >
             <CartesianGrid strokeDasharray="3 3" />
             <XAxis dataKey="name" />
             <YAxis />
             <Tooltip
-              formatter={(value) => {
-                // TooltipValueWithDollarSign
-                return typeof value === "number" ? `$${value}` : value;
-              }}
+              formatter={(value) =>
+                typeof value === "number" ? `$${value}` : value
+              }
             />
             <Bar
               dataKey="fee"
               fill="#8884d8"
-              shape={TriangleBar} // pass function component
+              shape={TriangleBar}
               label={{ position: "top" }}
               animationBegin={0}
               animationDuration={900}

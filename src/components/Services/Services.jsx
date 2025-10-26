@@ -47,18 +47,21 @@ const Services = () => {
       </div>
 
       {/* ServiceCardContainer */}
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 py-10">
+      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 py-10 px-4 sm:px-8 lg:px-0">
         {servicesData.map((service) => (
           <div
             key={service?.id}
-            className="px-12 py-10 bg-[#0F0F0F05] rounded-2xl"
+            className="px-6 py-10 bg-[#0F0F0F05] rounded-2xl text-center sm:text-left"
           >
             {/* ServiceImage */}
             <div>
-              <img src={service?.image} className="w-16" />
+              <img
+                src={service?.image}
+                className="w-12 sm:w-16 mx-auto lg:mx-0"
+              />
             </div>
             {/* AnimateNumber */}
-            <h4 className="text-[#0F0F0F] text-5xl font-extrabold pt-4 pb-3">
+            <h4 className="text-3xl sm:text-4xl md:text-5xl font-extrabold pt-4 pb-3 text-center lg:text-left">
               <CountUp
                 end={service?.number}
                 duration={3}
@@ -67,7 +70,7 @@ const Services = () => {
               />
               {service?.suffix}
             </h4>
-            <p className="text-[#0F0F0F60] text-xl font-medium">
+            <p className="text-center lg:text-left text-[#0F0F0F60] text-lg sm:text-xl font-medium">
               {service?.title}
             </p>
           </div>

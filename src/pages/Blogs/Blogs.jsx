@@ -50,22 +50,24 @@ const Blogs = () => {
       </div>
 
       {/* BlogsContainer */}
-      <div className="my-10 space-y-8">
+      <div className="my-10 space-y-6 px-4 sm:px-6 lg:px-0">
         {blogQnA.map((blog, index) => (
           <div
             key={index}
-            className="px-4 py-8 bg-[#0F0F0F05] rounded-2xl border border-[#0F0F0F10]"
+            className="p-4 sm:p-6 bg-[#0F0F0F05] rounded-2xl border border-[#0F0F0F10]"
           >
-            <h2 className="text-[#0F0F0F] text-xl font-semibold border-b border-dashed border-[#0F0F0F15] pb-4 mb-4">
-              {blog?.question}
+            <h2 className="text-[#0F0F0F] text-lg sm:text-xl font-semibold border-b border-dashed border-[#0F0F0F15] pb-2 mb-2 sm:pb-4 sm:mb-4">
+              {blog.question}
             </h2>
-            <div className="border-b border-dashed border-[#0F0F0F15] pb-4 mb-4">
-              <p className="text-[#176AE5] text-lg">Answer :</p>
-              <span className="text-[#0F0F0F] text-lg">{blog?.answer}</span>
+            <div className="border-b border-dashed border-[#0F0F0F15] pb-2 mb-2 sm:pb-4 sm:mb-4">
+              <p className="text-[#176AE5] text-base sm:text-lg">Answer :</p>
+              <span className="text-[#0F0F0F] text-base sm:text-lg">
+                {blog.answer}
+              </span>
             </div>
-            <div className="flex items-center gap-1 text-[#0F0F0F90] text-sm">
+            <div className="flex items-center gap-1 text-[#0F0F0F90] text-xs sm:text-sm">
               <CalendarHeart size={16} />
-              <span>Added at {blog?.date}</span>
+              <span>Added at {blog.date}</span>
             </div>
           </div>
         ))}

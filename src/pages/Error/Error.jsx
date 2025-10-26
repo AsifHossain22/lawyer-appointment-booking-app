@@ -12,7 +12,7 @@ const Error = () => {
       <Navbar></Navbar>
 
       {/* ErrorContainer */}
-      <div className="errorPage flex justify-center items-end mt-[-80px] pb-10">
+      <div className="errorPage flex justify-center items-end pb-10">
         {/* Content */}
         <div className="text-center text-white">
           <h2 className="text-5xl font-extrabold">Page Not Found</h2>

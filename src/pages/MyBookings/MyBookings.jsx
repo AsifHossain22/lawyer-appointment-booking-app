@@ -31,7 +31,7 @@ const MyBookings = () => {
   const navigate = useNavigate();
 
   return (
-    <div className="py-20">
+    <div className="lg:py-20">
       {/* RechartSection */}
       <RechartBarChart></RechartBarChart>
 
@@ -61,38 +61,39 @@ const MyBookings = () => {
             </p>
           </div>
 
-          {bookings.map((lawyer) => (
-            <div
-              key={lawyer?.lawyerId}
-              className="border-b border-dashed border-[#0F0F0F10] pb-6"
-            >
-              <div className="flex items-center justify-between">
-                <div>
-                  <h4 className="text-[#141414] text-xl font-bold">
-                    {lawyer?.lawyerName}
-                  </h4>
-                  <p className="text-[#14141460] text-lg font-medium">
-                    {lawyer?.speciality}
-                  </p>
-                </div>
-                <div>
-                  <p className="text-[#14141460] text-lg font-medium">
-                    Fee:{" "}
-                    <span className="font-bold text-[#0EA106]">
-                      {lawyer?.consultationFee}
-                    </span>
-                  </p>
-                </div>
-              </div>
-
-              <button
-                onClick={() => handleCancelAppointment(lawyer?.lawyerId)}
-                className="mt-3 w-full block text-center border border-[#E0242440] rounded-full text-[#E02424] hover:text-white px-3.5 py-2 cursor-pointer hover:bg-[#E02424] duration-300"
+          <div className="p-4 sm:p-8 my-10 border border-[#14141415] rounded-2xl space-y-6">
+            {bookings.map((lawyer) => (
+              <div
+                key={lawyer.lawyerId}
+                className="border-b border-dashed border-[#0F0F0F10] pb-6"
               >
-                Cancel Appointment
-              </button>
-            </div>
-          ))}
+                <div className="flex flex-col sm:flex-row justify-between items-start sm:items-center gap-4 sm:gap-0">
+                  <div>
+                    <h4 className="text-[#141414] text-lg sm:text-xl font-bold">
+                      {lawyer.lawyerName}
+                    </h4>
+                    <p className="text-[#14141460] text-base">
+                      {lawyer.speciality}
+                    </p>
+                  </div>
+                  <div>
+                    <p className="text-[#14141460] text-base">
+                      Fee:{" "}
+                      <span className="font-bold text-[#0EA106]">
+                        {lawyer.consultationFee}
+                      </span>
+                    </p>
+                  </div>
+                </div>
+                <button
+                  onClick={() => handleCancelAppointment(lawyer.lawyerId)}
+                  className="mt-3 w-full block text-center border border-[#E0242440] rounded-full text-[#E02424] hover:text-white px-3.5 py-2 cursor-pointer hover:bg-[#E02424] duration-300"
+                >
+                  Cancel Appointment
+                </button>
+              </div>
+            ))}
+          </div>
         </div>
       )}
     </div>
