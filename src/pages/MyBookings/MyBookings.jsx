@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from "react";
+import { useNavigate } from "react-router";
 import { toast } from "react-toastify";
 
 const MyBookings = () => {
@@ -22,7 +23,8 @@ const MyBookings = () => {
     toast.info("Appointment cancelled successfully!");
   };
 
-  // console.log(bookings);
+  // NavigateToHomePage
+  const navigate = useNavigate();
 
   return (
     <div className="py-20">
@@ -39,9 +41,17 @@ const MyBookings = () => {
 
       {/* BookAppointmentContainer */}
       {bookings.length === 0 ? (
-        <p className="text-center mt-10 text-gray-500 text-lg">
-          You have no booked appointments yet.
-        </p>
+        <div className="text-center">
+          <p className="mt-10 mb-5 text-gray-500 text-lg">
+            You have no booked appointments yet.
+          </p>
+          <button
+            onClick={() => navigate("/")}
+            className="text-center border border-[#0EA106] rounded-full text-xl font-bold text-white hover:text-[#0EA106] px-6 py-2 cursor-pointer bg-[#0EA106] hover:bg-transparent duration-300"
+          >
+            Book an Appointment
+          </button>
+        </div>
       ) : (
         <div className="p-8 my-10 border border-[#14141415] rounded-2xl space-y-6">
           {bookings.map((lawyer) => (
