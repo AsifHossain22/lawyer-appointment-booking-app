@@ -35,21 +35,10 @@ const MyBookings = () => {
       {/* RechartSection */}
       <RechartBarChart></RechartBarChart>
 
-      {/* SectionTitle */}
-      <div className="text-center">
-        <h2 className="text-[#0F0F0F] text-[40px] font-extrabold mb-4">
-          My Today's Appointments
-        </h2>
-        <p className="w-10/12 mx-auto">
-          Our platform connects you with verified, experienced Lawyers across
-          various specialties — all at your convenience.
-        </p>
-      </div>
-
       {/* BookAppointmentContainer */}
       {bookings.length === 0 ? (
         <div className="text-center">
-          <p className="mt-10 mb-5 text-gray-500 text-lg">
+          <p className="text-[#0F0F0F] text-[40px] font-extrabold mb-10">
             You have no booked appointments yet.
           </p>
           <button
@@ -61,6 +50,17 @@ const MyBookings = () => {
         </div>
       ) : (
         <div className="p-8 my-10 border border-[#14141415] rounded-2xl space-y-6">
+          {/* SectionTitle */}
+          <div className="text-center">
+            <h2 className="text-[#0F0F0F] text-[40px] font-extrabold mb-4">
+              My Today's Appointments
+            </h2>
+            <p className="w-10/12 mx-auto">
+              Our platform connects you with verified, experienced Lawyers
+              across various specialties — all at your convenience.
+            </p>
+          </div>
+
           {bookings.map((lawyer) => (
             <div
               key={lawyer?.lawyerId}
