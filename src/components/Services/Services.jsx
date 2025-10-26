@@ -2,7 +2,7 @@ import React from "react";
 
 const Services = () => {
   return (
-    <div>
+    <div className="mt-10">
       {/* SectionTitle */}
       <div className="text-center">
         <h2 className="text-[#0F0F0F] text-[40px] font-extrabold">

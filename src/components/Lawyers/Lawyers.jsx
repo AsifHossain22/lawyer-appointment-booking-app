@@ -1,7 +1,13 @@
-import React, { Suspense } from "react";
+import React, { Suspense, useState } from "react";
 import Lawyer from "../Lawyer/Lawyer";
 
 const Lawyers = ({ data }) => {
+  // StateHandlerToShowLawyersData
+  const [showAllLawyers, setShowAllLawyers] = useState(false);
+
+  // InitiallyShowOnlySixLawyersData
+  const visibleLawyers = showAllLawyers ? data : data.slice(0, 6);
+
   return (
     <div>
       {/* SectionTitle */}
@@ -19,11 +25,23 @@ const Lawyers = ({ data }) => {
       </div>
       <Suspense fallback={<span>Loading...</span>}>
         <div className="grid grid-cols-1 md:grid-cols-2 gap-16 py-10">
-          {data.map((lawyer) => (
-            <Lawyer key={lawyer.lawyerId} lawyer={lawyer}></Lawyer>
+          {visibleLawyers.map((lawyer) => (
+            <Lawyer key={lawyer?.lawyerId} lawyer={lawyer}></Lawyer>
           ))}
         </div>
       </Suspense>
+
+      {/* ShowAllLawyersButton */}
+      {!showAllLawyers && (
+        <div className="text-center">
+          <button
+            onClick={() => setShowAllLawyers(true)}
+            className="border border-[#176AE520] rounded-full hover:text-[#176AE5] text-white px-6 py-2 font-semibold bg-[#176AE5] hover:bg-transparent cursor-pointer duration-300"
+          >
+            Show All Lawyers
+          </button>
+        </div>
+      )}
     </div>
   );
 };
