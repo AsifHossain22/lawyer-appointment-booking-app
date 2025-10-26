@@ -1,5 +1,6 @@
 import React, { useEffect } from "react";
 import { Link, useLoaderData, useNavigate, useParams } from "react-router";
+import { toast } from "react-toastify";
 
 const LawyersDetails = () => {
   const { lawyerId } = useParams();
@@ -77,6 +78,9 @@ const LawyersDetails = () => {
 
       // NavigateToMyBookingsPage
       navigate("/my-bookings");
+
+      // SuccessfullyBookedToastify
+      toast.success("Appointment booked successfully!");
     }
   };
 

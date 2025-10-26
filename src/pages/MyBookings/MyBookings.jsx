@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from "react";
+import { toast } from "react-toastify";
 
 const MyBookings = () => {
   const [bookings, setBookings] = useState([]);
@@ -16,9 +17,12 @@ const MyBookings = () => {
     );
     setBookings(updatedBookings);
     localStorage.setItem("bookings", JSON.stringify(updatedBookings));
+
+    // CancelledAppointmentToastify
+    toast.info("Appointment cancelled successfully!");
   };
 
-  console.log(bookings);
+  // console.log(bookings);
 
   return (
     <div className="py-20">
