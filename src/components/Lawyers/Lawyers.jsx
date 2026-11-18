@@ -1,42 +1,42 @@
-import React, { Suspense, useState } from "react";
-import Lawyer from "../Lawyer/Lawyer";
+import React, { Suspense, useState } from 'react';
+import Lawyer from '../Lawyer/Lawyer';
 
 const Lawyers = ({ data }) => {
-  // StateHandlerToShowLawyersData
   const [showAllLawyers, setShowAllLawyers] = useState(false);
-
-  // InitiallyShowOnlySixLawyersData
   const visibleLawyers = showAllLawyers ? data : data.slice(0, 6);
 
   return (
     <div>
-      {/* SectionTitle */}
       <div className="text-center">
-        <h2 className="text-[#0F0F0F] text-[40px] font-extrabold">
+        <h2 className="text-base-content text-3xl sm:text-[40px] font-extrabold">
           Our Best Lawyers
         </h2>
-        <p className="w-10/12 mx-auto">
+        <p className="w-10/12 mx-auto text-base-content/70 mt-2">
           Our platform connects you with verified, experienced Lawyers across
-          various specialties — all at your convenience. Whether it's a routine
-          <br />
+          various specialties - all at your convenience. Whether it's a routine
           checkup or urgent consultation, book appointments in minutes and
           receive quality care you can trust.
         </p>
       </div>
-      <Suspense fallback={<span>Loading...</span>}>
+      <Suspense
+        fallback={
+          <span className="loading loading-spinner text-success">
+            Loading...
+          </span>
+        }
+      >
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 md:gap-16 py-10 px-4 sm:px-6 lg:px-0">
-          {visibleLawyers.map((lawyer) => (
+          {visibleLawyers.map(lawyer => (
             <Lawyer key={lawyer?.lawyerId} lawyer={lawyer}></Lawyer>
           ))}
         </div>
       </Suspense>
 
-      {/* ShowAllLawyersButton */}
       {!showAllLawyers && (
         <div className="text-center">
           <button
             onClick={() => setShowAllLawyers(true)}
-            className="border border-[#176AE520] rounded-full hover:text-[#176AE5] text-white px-6 py-2 font-semibold bg-[#176AE5] hover:bg-transparent cursor-pointer duration-300"
+            className="border border-blue-500/30 rounded-full text-blue-500 hover:text-white px-6 py-2 font-semibold bg-blue-500/10 hover:bg-blue-500 cursor-pointer duration-300"
           >
             Show All Lawyers
           </button>

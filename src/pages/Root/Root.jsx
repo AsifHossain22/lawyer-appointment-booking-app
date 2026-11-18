@@ -1,23 +1,21 @@
-import React from "react";
-import Navbar from "../../components/Navbar/Navbar";
-import { Outlet, useNavigation } from "react-router";
-import Footer from "../../components/Footer/Footer";
+import React from 'react';
+import Navbar from '../../components/Navbar/Navbar';
+import { Outlet, useNavigation } from 'react-router';
+import Footer from '../../components/Footer/Footer';
 
 const Root = () => {
   const navigation = useNavigation();
-  const isLoading = navigation.state === "loading";
+  const isLoading = navigation.state === 'loading';
 
   return (
-    <div>
-      {/* Navbar */}
-      <Navbar></Navbar>
-      <div className="max-w-7xl mx-auto">
-        {/* LoadingSpinner */}
+    <div className="bg-base-100 text-base-content min-h-screen flex flex-col transition-colors duration-200">
+      <Navbar />
+      <main className="flex-1 max-w-7xl mx-auto w-full px-4 sm:px-6 lg:px-0 relative">
         <div
-          className={`absolute inset-0 flex items-center justify-center bg-white bg-opacity-70 z-50 transition-opacity duration-300 ${
+          className={`absolute inset-0 flex items-center justify-center bg-base-100 bg-opacity-70 z-50 transition-opacity duration-300 ${
             isLoading
-              ? "opacity-100 pointer-events-auto"
-              : "opacity-0 pointer-events-none"
+              ? 'opacity-100 pointer-events-auto'
+              : 'opacity-0 pointer-events-none'
           }`}
         >
           <div className="flex flex-col items-center">
@@ -26,9 +24,9 @@ const Root = () => {
           </div>
         </div>
 
-        <Outlet></Outlet>
-        <Footer></Footer>
-      </div>
+        <Outlet />
+      </main>
+      <Footer />
     </div>
   );
 };

@@ -1,7 +1,24 @@
-@import "tailwindcss";
-@plugin "daisyui";
+@import 'tailwindcss';
+@plugin "daisyui" {
+  themes:
+    light --default,
+    dark --prefersdark;
+}
 
-/* BannerSection */
+/* BaseStyleResetsToMakeSureTextAndBackgroundsAdaptProperly */
+html {
+  color-scheme: light dark;
+}
+
+body {
+  background-color: var(--fallback-b1, oklch(var(--b1)));
+  color: var(--fallback-bc, oklch(var(--bc)));
+  transition:
+    background-color 0.2s ease,
+    color 0.2s ease;
+}
+
+/* --- BannerSection --- */
 .bannerContainer {
   background: url(../src/assets/banner.png) center center no-repeat;
   background-size: cover;

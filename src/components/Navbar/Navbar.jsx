@@ -1,87 +1,65 @@
-import React from "react";
-import { NavLink, useNavigate } from "react-router";
+import React, { useEffect, useState } from 'react';
+import { NavLink, useNavigate } from 'react-router';
+import { Menu, X, Sun, Moon } from 'lucide-react';
 
 const Navbar = () => {
-  // NavigateToHomePage
   const navigate = useNavigate();
+  const [isOpen, setIsOpen] = useState(false);
+
+  // InitializeThemeFromLocalStorageOrSystemPreference
+  const [theme, setTheme] = useState(() => {
+    const savedTheme = localStorage.getItem('theme');
+    if (savedTheme) return savedTheme;
+    return window.matchMedia('(prefers-color-scheme: dark)').matches
+      ? 'dark'
+      : 'light';
+  });
+
+  // SyncThemeAttributeOn<html>AndSaveToLocalStorage
+  useEffect(() => {
+    document.documentElement.setAttribute('data-theme', theme);
+    localStorage.setItem('theme', theme);
+  }, [theme]);
+
+  const toggleTheme = () => {
+    setTheme(prev => (prev === 'light' ? 'dark' : 'light'));
+  };
+
+  const closeMenu = () => setIsOpen(false);
 
   return (
-    <header className="sticky top-0 z-50 bg-base-100 py-3 px-0 border-b border-[#E8E8E8] mb-10">
-      <div className="navbar max-w-7xl mx-auto px-4 sm:px-6 lg:px-0">
-        <div className="navbar-start">
-          {/* MobileMenu */}
-          <div className="dropdown">
-            <div tabIndex={0} role="button" className="btn btn-ghost lg:hidden">
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                className="h-5 w-5"
-                fill="none"
-                viewBox="0 0 24 24"
-                stroke="currentColor"
-              >
-                <path
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  strokeWidth="2"
-                  d="M4 6h16M4 12h8m-8 6h16"
-                />
-              </svg>
-            </div>
-            <ul
-              tabIndex={0}
-              className="menu menu-sm dropdown-content bg-base-100 rounded-box z-10 mt-3 w-52 p-2 shadow"
-            >
-              <NavLink
-                to="/"
-                end
-                className={({ isActive }) =>
-                  isActive
-                    ? "text-[#0EA106] text-base font-semibold"
-                    : "hover:text-[#0EA106] text-base font-semibold duration-300"
-                }
-              >
-                Home
-              </NavLink>
-              <NavLink
-                to="/my-bookings"
-                className={({ isActive }) =>
-                  isActive
-                    ? "text-[#0EA106] text-base font-semibold"
-                    : "hover:text-[#0EA106] text-base font-semibold duration-300"
-                }
-              >
-                My Bookings
-              </NavLink>
-              <NavLink
-                to="/blogs"
-                className={({ isActive }) =>
-                  isActive
-                    ? "text-[#0EA106] text-base font-semibold"
-                    : "hover:text-[#0EA106] text-base font-semibold duration-300"
-                }
-              >
-                Blogs
-              </NavLink>
-            </ul>
-          </div>
-          {/* Logo */}
-          <a className="btn bg-transparent border-none shadow-none hover:shadow-none flex items-center gap-2">
-            <img src="logo.png" alt="" className="w-10 sm:w-12" />
-            <span className="text-[#0F0F0F80] text-xl sm:text-3xl font-extrabold">
-              Law.BD
+    <header className="sticky top-0 z-50 backdrop-blur-md bg-base-100/80 border-b border-base-300 transition-colors duration-200">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="flex items-center justify-between h-20">
+          {/* BrandLogo */}
+          <button
+            onClick={() => {
+              navigate('/');
+              closeMenu();
+            }}
+            className="flex items-center gap-3 bg-transparent border-none cursor-pointer group"
+          >
+            <img
+              src="/logo.png"
+              alt="Law.BD Logo"
+              className="w-10 sm:w-12 transition-transform duration-300 group-hover:scale-105"
+            />
+            <span className="text-base-content text-xl sm:text-2xl font-extrabold tracking-tight">
+              Law<span className="text-[#0EA106]">.BD</span>
             </span>
-          </a>
-        </div>
-        {/* DesktopMenu */}
-        <div className="navbar-center hidden lg:flex">
-          <ul className="menu menu-horizontal px-1 gap-6 lg:gap-10">
+          </button>
+
+          {/* DesktopNavigationLinks */}
+          <nav className="hidden lg:flex items-center gap-8">
             <NavLink
               to="/"
               end
               className={({ isActive }) =>
-                isActive
-                  ? "text-[#0EA106] text-base font-semibold"
-                  : "hover:text-[#0EA106] text-base font-semibold duration-300"
+                `text-base font-medium transition-colors duration-200 ${
+                  isActive
+                    ? 'text-[#0EA106] font-semibold'
+                    : 'text-base-content/80 hover:text-[#0EA106]'
+                }`
               }
             >
               Home
@@ -89,9 +67,11 @@ const Navbar = () => {
             <NavLink
               to="/my-bookings"
               className={({ isActive }) =>
-                isActive
-                  ? "text-[#0EA106] text-base font-semibold"
-                  : "hover:text-[#0EA106] text-base font-semibold duration-300"
+                `text-base font-medium transition-colors duration-200 ${
+                  isActive
+                    ? 'text-[#0EA106] font-semibold'
+                    : 'text-base-content/80 hover:text-[#0EA106]'
+                }`
               }
             >
               My Bookings
@@ -99,22 +79,125 @@ const Navbar = () => {
             <NavLink
               to="/blogs"
               className={({ isActive }) =>
-                isActive
-                  ? "text-[#0EA106] text-base font-semibold"
-                  : "hover:text-[#0EA106] text-base font-semibold duration-300"
+                `text-base font-medium transition-colors duration-200 ${
+                  isActive
+                    ? 'text-[#0EA106] font-semibold'
+                    : 'text-base-content/80 hover:text-[#0EA106]'
+                }`
               }
             >
               Blogs
             </NavLink>
-          </ul>
+          </nav>
+
+          {/* RightActionArea (ThemeToggleAndCTA) */}
+          <div className="hidden lg:flex items-center gap-4">
+            <button
+              onClick={toggleTheme}
+              aria-label="Toggle Theme"
+              className="btn btn-ghost btn-circle text-base-content"
+            >
+              {theme === 'dark' ? (
+                <Sun className="h-5 w-5" />
+              ) : (
+                <Moon className="h-5 w-5" />
+              )}
+            </button>
+
+            {/* BookNowButton */}
+            <button
+              onClick={() => navigate('/')}
+              className="btn bg-[#0EA106] text-white border border-[#0EA106] hover:bg-transparent hover:border-[#0EA106] hover:text-[#0EA106] rounded-full px-7 text-base font-semibold shadow-sm transition-all duration-300"
+            >
+              Book Now
+            </button>
+          </div>
+
+          {/* MobileMenuAndThemeToggleButtons */}
+          <div className="flex items-center gap-2 lg:hidden">
+            <button
+              onClick={toggleTheme}
+              aria-label="Toggle Theme"
+              className="btn btn-ghost btn-circle btn-sm text-base-content"
+            >
+              {theme === 'dark' ? (
+                <Sun className="h-4 w-4" />
+              ) : (
+                <Moon className="h-4 w-4" />
+              )}
+            </button>
+
+            {/* HamburgerButton */}
+            <button
+              onClick={() => setIsOpen(!isOpen)}
+              className="btn btn-ghost btn-circle text-base-content focus:outline-none"
+              aria-label="Toggle Menu"
+            >
+              {isOpen ? <X size={24} /> : <Menu size={24} />}
+            </button>
+          </div>
         </div>
-        <div className="navbar-end">
-          <button
-            onClick={() => navigate("/")}
-            className="btn bg-[#0EA106] text-white border border-[#0EA106] hover:bg-transparent hover:border-[#0EA106] hover:text-[#0EA106] rounded-full py-3 px-6 sm:py-4 sm:px-8 text-sm sm:text-base"
+      </div>
+
+      {/* MobileSlideDownDrawer / DropdownMenu */}
+      <div
+        className={`lg:hidden overflow-hidden transition-all duration-300 ease-in-out bg-base-100 border-b border-base-300 shadow-lg ${
+          isOpen ? 'max-h-96 opacity-100 py-6' : 'max-h-0 opacity-0 py-0'
+        }`}
+      >
+        <div className="flex flex-col px-6 space-y-4">
+          <NavLink
+            to="/"
+            end
+            onClick={closeMenu}
+            className={({ isActive }) =>
+              `text-lg font-medium px-4 py-2 rounded-xl transition-colors ${
+                isActive
+                  ? 'bg-[#0EA106]/10 text-[#0EA106] font-semibold'
+                  : 'text-base-content hover:bg-base-200'
+              }`
+            }
           >
-            Book Now
-          </button>
+            Home
+          </NavLink>
+          <NavLink
+            to="/my-bookings"
+            onClick={closeMenu}
+            className={({ isActive }) =>
+              `text-lg font-medium px-4 py-2 rounded-xl transition-colors ${
+                isActive
+                  ? 'bg-[#0EA106]/10 text-[#0EA106] font-semibold'
+                  : 'text-base-content hover:bg-base-200'
+              }`
+            }
+          >
+            My Bookings
+          </NavLink>
+          <NavLink
+            to="/blogs"
+            onClick={closeMenu}
+            className={({ isActive }) =>
+              `text-lg font-medium px-4 py-2 rounded-xl transition-colors ${
+                isActive
+                  ? 'bg-[#0EA106]/10 text-[#0EA106] font-semibold'
+                  : 'text-base-content hover:bg-base-200'
+              }`
+            }
+          >
+            Blogs
+          </NavLink>
+
+          <div className="pt-2">
+            <button
+              onClick={() => {
+                navigate('/');
+                closeMenu();
+              }}
+              className="w-full btn bg-[#0EA106] text-white border border-[#0EA106] hover:bg-transparent hover:text-[#0EA106] rounded-full py-3 text-base font-semibold shadow-sm transition-all duration-300"
+            >
+              Book Now
+            </button>
+          </div>
         </div>
       </div>
     </header>
